@@ -1,0 +1,49 @@
+{{template "base/base.html" .}}
+{{define "head"}}
+<title>{{i18n .Lang "main_board"}} - {{i18n .Lang "app_intro"}}</title>
+{{end}}
+{{define "body"}}
+
+<h3><span>{{.NickName}}</span></h3>
+<div id="uID" style="visibility:hidden;">{{.UID}}</div>
+
+<form role="form" style="width:20%">
+  <div class="form-group">
+    <select id="week" class="form-control">
+      <option value="1">星期一</option>
+      <option value="2">星期二</option>
+      <option value="3">星期三</option>
+      <option value="4">星期四</option>
+      <option value="5">星期五</option>
+      <option value="6">星期六</option>
+      <option value="7">星期日</option>
+      </select>
+  </div>
+
+  <div class="form-group">
+      <input id="courtNum" type="text" class="form-control" placeholder ="场地号,比如:1,2,..." onkeydown="if(event.keyCode==13)return false;" required>
+  </div>
+
+  <div class="form-group">
+      <input id="startTime" type="text" class="form-control" placeholder ="开始时间(24小时格式),比如:18:30" onkeydown="if(event.keyCode==13)return false;" required>
+  </div>
+
+  <div class="form-group">
+      <input id="endTime" type="text" class="form-control" placeholder ="结束时间(24小时格式),比如:20:30" onkeydown="if(event.keyCode==13)return false;" required>
+  </div>
+
+  <div class="form-group">
+    <select id="courtType" class="form-control">
+      <option value="1">多求</option>
+      <option value="2">比赛</option>
+      <option value="3">拉球</option>
+      </select>
+  </div>
+
+  <div class="form-group">
+      <button id="publishBtn" type="button" class="btn btn-success">Publish</button>
+  </div>
+
+</form>
+
+{{end}}
